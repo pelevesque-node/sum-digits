@@ -1,10 +1,7 @@
 'use strict'
 
+const isObject = require('isobject')
 const stringOccurrence = require('string-occurrence')
-
-function isObject (obj) {
-  return obj && typeof obj === 'object' && obj.constructor === Object
-}
 
 function sumDigits (str) {
   let sum = 0
