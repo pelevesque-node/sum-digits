@@ -42,19 +42,19 @@ sumDigits('1a2!3_4.') // 10
 
 ```js
 // you can provide a hash table of chars to digits
-const charsToDigits = {'a' : 1, 'b' : 2, 'c': 3}
+const charsToDigits = { 'a' : 1, 'b' : 2, 'c': 3 }
 sumDigits('1a2b3ca', charsToDigits) // 13
 ```
 
 ```js
 // the hash table can contain alphanumerical keys of any length
-const charsToDigits = {'1p' : 1000, 'panama' : 100, 'nam': 10, 2: 1 }
+const charsToDigits = { '1p' : 1000, 'panama' : 100, 'nam': 10, 2: 1 }
 sumDigits('1panama2', charsToDigits) // 1114
 ```
 
 ```js
 // you can bypass normal digit summing and only use charsToDigits
-const charsToDigits = {'1p' : 1000, 'panama' : 100, 'nam': 10, 2: 1 }
+const charsToDigits = { '1p' : 1000, 'panama' : 100, 'nam': 10, 2: 1 }
 const doNormalSumming = false
 sumDigits('1panama2', charsToDigits, doNormalSumming) // 1111
 ```
