@@ -53,8 +53,8 @@ sumDigits('1panama2', charsToDigits) // 1114
 ```
 
 ```js
-// you can bypass normal digit summing and only use charsToDigits
+// you can bypass plain digit summing and only use charsToDigits summing
 const charsToDigits = { '1p' : 1000, 'panama' : 100, 'nam': 10, 2: 1 }
-const doNormalSumming = false
-sumDigits('1panama2', charsToDigits, doNormalSumming) // 1111
+const sumPlainDigits = false
+sumDigits('1panama2', charsToDigits, sumPlainDigits) // 1111
 ```

@@ -5,21 +5,21 @@ const expect = require('chai').expect
 const sumDigits = require('../index')
 
 describe('#sumDigits()', () => {
-  describe('#should work with the runSumDigits flag set to false', () => {
-    it('should not count digits when the runSumDigits flag is false', () => {
+  describe('#should work with the sumPlainDigits flag set to false', () => {
+    it('should not count digits when the sumPlainDigits flag is false', () => {
       const expected = 0
       const str = '12345'
-      const runSumDigits = false
-      const result = sumDigits(str, undefined, runSumDigits)
+      const sumPlainDigits = false
+      const result = sumDigits(str, undefined, sumPlainDigits)
       expect(result).to.equal(expected)
     })
 
-    it('should still run charsToDigits assignments if the runSumDigits flag is false', () => {
+    it('should still run charsToDigits assignments if the sumPlainDigits flag is false', () => {
       const expected = 8
       const str = '12345'
       const charsToDigits = { '12': 1, '34': 2, '345': 5 }
-      const runSumDigits = false
-      const result = sumDigits(str, charsToDigits, runSumDigits)
+      const sumPlainDigits = false
+      const result = sumDigits(str, charsToDigits, sumPlainDigits)
       expect(result).to.equal(expected)
     })
   })
