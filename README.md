@@ -4,7 +4,7 @@
 
 # sum-digits
 
-Sums the digits in a string with a powerful chars->digits feature.
+Sums the digits in a string with a powerful substrings->digits feature.
 
 ## Node Repository
 
@@ -41,20 +41,20 @@ sumDigits('1a2!3_4.') // 10
 ```
 
 ```js
-// you can provide a hash table of chars to digits
-const charsToDigits = { 'a' : 1, 'b' : 2, 'c': 3 }
-sumDigits('1a2b3ca', charsToDigits) // 13
+// you can provide a hash table of substrings to digits
+const substringsToDigits = { 'a' : 1, 'b' : 2, 'c': 3 }
+sumDigits('1a2b3ca', substringsToDigits) // 13
 ```
 
 ```js
-// the hash table can contain alphanumerical keys of any length
-const charsToDigits = { '1p' : 1000, 'panama' : 100, 'nam': 10, 2: 1 }
-sumDigits('1panama2', charsToDigits) // 1114
+// substrings can be of any length
+const substringsToDigits = { '1p' : 1000, 'panama' : 100, 'nam': 10, 2: 1 }
+sumDigits('1panama2', substringsToDigits) // 1114
 ```
 
 ```js
-// you can bypass plain digit summing and only use charsToDigits summing
-const charsToDigits = { '1p' : 1000, 'panama' : 100, 'nam': 10, 2: 1 }
+// you can bypass plain digit summing and only use substringsToDigits summing
+const substringsToDigits = { '1p' : 1000, 'panama' : 100, 'nam': 10, 2: 1 }
 const sumPlainDigits = false
-sumDigits('1panama2', charsToDigits, sumPlainDigits) // 1111
+sumDigits('1panama2', substringsToDigits, sumPlainDigits) // 1111
 ```

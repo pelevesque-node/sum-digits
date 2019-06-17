@@ -14,17 +14,17 @@ describe('#sumDigits()', () => {
       expect(result).to.equal(expected)
     })
 
-    it('should still run charsToDigits assignments if the sumPlainDigits flag is false', () => {
+    it('should still run substringsToDigits assignments if the sumPlainDigits flag is false', () => {
       const expected = 8
       const str = '12345'
-      const charsToDigits = { '12': 1, '34': 2, '345': 5 }
+      const substringsToDigits = { '12': 1, '34': 2, '345': 5 }
       const sumPlainDigits = false
-      const result = sumDigits(str, charsToDigits, sumPlainDigits)
+      const result = sumDigits(str, substringsToDigits, sumPlainDigits)
       expect(result).to.equal(expected)
     })
   })
 
-  describe('#should work without charsToDigits assignments', () => {
+  describe('#should work without substringsToDigits assignments', () => {
     it('should return 0 for an empty string', () => {
       const expected = 0
       const str = ''
@@ -47,152 +47,152 @@ describe('#sumDigits()', () => {
     })
   })
 
-  describe('#should work with charsToDigits with single character keys', () => {
-    it('should work with charsToDigits with assignments that are numbers', () => {
+  describe('#should work with substringsToDigits with single character keys', () => {
+    it('should work with substringsToDigits with assignments that are numbers', () => {
       const expected = 666
       const str = '1a2b3!'
-      const charsToDigits = { 'a': 5, 'b': 55, '!': 600 }
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = { 'a': 5, 'b': 55, '!': 600 }
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
-    it('should work with charsToDigits with assignments that are stringified numbers', () => {
+    it('should work with substringsToDigits with assignments that are stringified numbers', () => {
       const expected = 666
       const str = '1a2b3!'
-      const charsToDigits = { 'a': '5', 'b': '55', '!': '600' }
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = { 'a': '5', 'b': '55', '!': '600' }
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
-    it('should work with charsToDigits with keys that are numbers', () => {
+    it('should work with substringsToDigits with keys that are numbers', () => {
       const expected = 576
       const str = '1234'
-      const charsToDigits = { 1: 11, 2: 222, 3: 333 }
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = { 1: 11, 2: 222, 3: 333 }
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
-    it('should work with charsToDigits with keys that are stringified numbers', () => {
+    it('should work with substringsToDigits with keys that are stringified numbers', () => {
       const expected = 576
       const str = '1234'
-      const charsToDigits = { '1': 11, '2': 222, '3': 333 }
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = { '1': 11, '2': 222, '3': 333 }
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
-    it('should ignore charsToDigits assignments that return non-digit characters', () => {
+    it('should ignore substringsToDigits assignments that return non-digit characters', () => {
       const expected = 6
       const str = '1a2b3!'
-      const charsToDigits = { 'a': '!', '$': '@', '#': '#' }
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = { 'a': '!', '$': '@', '#': '#' }
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
   })
 
-  describe('#should work with charsToDigits with multiple character keys', () => {
-    it('should work with charsToDigits with assignments that are numbers', () => {
+  describe('#should work with substringsToDigits with multiple character keys', () => {
+    it('should work with substringsToDigits with assignments that are numbers', () => {
       const expected = 666
       const str = '1ab2cd3man'
-      const charsToDigits = { '1a': 1, 'ab': 5, 'cd': 54, 'man': 600 }
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = { '1a': 1, 'ab': 5, 'cd': 54, 'man': 600 }
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
-    it('should work with charsToDigits with assignments that are stringified numbers', () => {
+    it('should work with substringsToDigits with assignments that are stringified numbers', () => {
       const expected = 666
       const str = '1ab2cd3man'
-      const charsToDigits = { '1a': '1', 'ab': '5', 'cd': '54', 'man': '600' }
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = { '1a': '1', 'ab': '5', 'cd': '54', 'man': '600' }
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
-    it('should work with charsToDigits with keys that overlap', () => {
+    it('should work with substringsToDigits with keys that overlap', () => {
       const expected = 20
       const str = '1ab2abd3bd'
-      const charsToDigits = { 'ab': 1, 'b': 2, 'bd': 3 }
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = { 'ab': 1, 'b': 2, 'bd': 3 }
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
-    it('should work with charsToDigits with keys that are nested', () => {
+    it('should work with substringsToDigits with keys that are nested', () => {
       const expected = 87
       const str = '12panama34'
-      const charsToDigits = { 'panama': 11, 'nam': 66 }
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = { 'panama': 11, 'nam': 66 }
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
-    it('should work with charsToDigits with keys that are numbers', () => {
+    it('should work with substringsToDigits with keys that are numbers', () => {
       const expected = 576
       const str = '1234'
-      const charsToDigits = { 1: 11, 2: 222, 234: 333 }
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = { 1: 11, 2: 222, 234: 333 }
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
-    it('should work with charsToDigits with keys that are stringified numbers', () => {
+    it('should work with substringsToDigits with keys that are stringified numbers', () => {
       const expected = 576
       const str = '1234'
-      const charsToDigits = { '12': 11, '2': 222, '234': 333 }
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = { '12': 11, '2': 222, '234': 333 }
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
-    it('should ignore charsToDigits assignments that return non-digit characters', () => {
+    it('should ignore substringsToDigits assignments that return non-digit characters', () => {
       const expected = 6
       const str = '1a2b3!'
-      const charsToDigits = { 'ab': '!', 'cd': '@', 'man': '#' }
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = { 'ab': '!', 'cd': '@', 'man': '#' }
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
   })
 
-  describe('#should ignore charsToDigits when it is not an object', () => {
+  describe('#should ignore substringsToDigits when it is not an object', () => {
     it('should ignore string', () => {
       const expected = 6
       const str = '123'
-      const charsToDigits = 'string'
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = 'string'
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
     it('should ignore number', () => {
       const expected = 6
       const str = '123'
-      const charsToDigits = 666
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = 666
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
     it('should ignore undefined', () => {
       const expected = 6
       const str = '123'
-      const charsToDigits = undefined
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = undefined
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
     it('should ignore array', () => {
       const expected = 6
       const str = '123'
-      const charsToDigits = []
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = []
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
     it('should ignore null', () => {
       const expected = 6
       const str = '123'
-      const charsToDigits = null
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = null
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
 
     it('should ignore boolean', () => {
       const expected = 6
       const str = '123'
-      const charsToDigits = true
-      const result = sumDigits(str, charsToDigits)
+      const substringsToDigits = true
+      const result = sumDigits(str, substringsToDigits)
       expect(result).to.equal(expected)
     })
   })

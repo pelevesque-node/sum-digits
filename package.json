@@ -1,7 +1,7 @@
 {
   "name": "@pelevesque/sum-digits",
   "version": "0.0.3",
-  "description": "Sums the digits in a string with a powerful chars->digits feature.",
+  "description": "Sums the digits in a string with a powerful substrings->digits feature.",
   "main": "index.js",
   "engines": {
     "node": ">=6.4.0"

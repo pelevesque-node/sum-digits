@@ -12,20 +12,20 @@ function sumPlainDigits (str) {
   return sum
 }
 
-function sumCharsToDigits (str, charsToDigits) {
+function sumSubstringsToDigits (str, substringsToDigits) {
   let sum = 0
-  for (const key in charsToDigits) {
-    if (/\d/.test(charsToDigits[key])) {
+  for (const key in substringsToDigits) {
+    if (/\d/.test(substringsToDigits[key])) {
       const numOccurrences = stringOccurrence(str, key.toString())
-      sum += numOccurrences * charsToDigits[key]
+      sum += numOccurrences * substringsToDigits[key]
     }
   }
   return sum
 }
 
-module.exports = (str, charsToDigits = null, sumPlainDigitsFlag = true) => {
+module.exports = (str, substringsToDigits = null, sumPlainDigitsFlag = true) => {
   let sum = 0
   if (sumPlainDigitsFlag) sum += sumPlainDigits(str)
-  if (isObject(charsToDigits)) sum += sumCharsToDigits(str, charsToDigits)
+  if (isObject(substringsToDigits)) sum += sumSubstringsToDigits(str, substringsToDigits)
   return sum
 }
