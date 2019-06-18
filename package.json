@@ -1,6 +1,6 @@
 {
   "name": "@pelevesque/sum-digits",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Sums the digits in a string with a powerful substrings->digits feature.",
   "main": "index.js",
   "engines": {
