@@ -3,7 +3,7 @@
 const isObject = require('isobject')
 const stringOccurrence = require('string-occurrence')
 
-function sumPlainDigits (str) {
+function _sumPlainDigits (str) {
   let sum = 0
   for (let i = 0, len = str.length; i < len; i++) {
     const char = str.charAt(i)
@@ -12,7 +12,7 @@ function sumPlainDigits (str) {
   return sum
 }
 
-function sumSubstringsToDigits (str, substringsToDigits) {
+function _sumSubstringsToDigits (str, substringsToDigits) {
   let sum = 0
   for (const key in substringsToDigits) {
     if (/\d/.test(substringsToDigits[key])) {
@@ -23,9 +23,9 @@ function sumSubstringsToDigits (str, substringsToDigits) {
   return sum
 }
 
-module.exports = (str, substringsToDigits = null, sumPlainDigitsFlag = true) => {
+module.exports = (str, { substringsToDigits = null, sumPlainDigits = true } = {}) => {
   let sum = 0
-  if (sumPlainDigitsFlag) sum += sumPlainDigits(str)
-  if (isObject(substringsToDigits)) sum += sumSubstringsToDigits(str, substringsToDigits)
+  if (sumPlainDigits) sum += _sumPlainDigits(str)
+  if (isObject(substringsToDigits)) sum += _sumSubstringsToDigits(str, substringsToDigits)
   return sum
 }
