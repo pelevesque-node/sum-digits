@@ -26,14 +26,14 @@ https://www.npmjs.com/package/@pelevesque/sum-digits
 
 ## Usage
 
-### parameters
+### Parameters
 
 ```js
 str     (required)
 options (optional) default = { substringsToDigits = null, sumPlainDigits = true }
 ```
 
-### examples
+### Examples
 
 ```js
 const  sumDigits = require('@pelevesque/sum-digits')
