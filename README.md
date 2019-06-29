@@ -36,7 +36,7 @@ options (optional) default = { substringsToDigits = null, sumPlainDigits = true 
 ### Examples
 
 ```js
-const  sumDigits = require('@pelevesque/sum-digits')
+const sumDigits = require('@pelevesque/sum-digits')
 ```
 
 ```js
