@@ -51,18 +51,18 @@ sumDigits('1a2!3_4.') // 10
 
 ```js
 // you can provide a hash table of substrings to digits
-const substringsToDigits = { 'a' : 1, 'b' : 2, 'c': 3 }
+const substringsToDigits = { a: 1, b: 2, c: 3 }
 sumDigits('1a2b3ca', { substringsToDigits: substringsToDigits }) // 13
 ```
 
 ```js
 // substrings can be of any length
-const substringsToDigits = { '1p' : 1000, 'panama' : 100, 'nam': 10, 2: 1 }
+const substringsToDigits = { '1p': 1000, panama: 100, nam: 10, 2: 1 }
 sumDigits('1panama2', { substringsToDigits: substringsToDigits }) // 1114
 ```
 
 ```js
 // you can bypass plain digit summing and only use substringsToDigits summing
-const substringsToDigits = { '1p' : 1000, 'panama' : 100, 'nam': 10, 2: 1 }
+const substringsToDigits = { '1p': 1000, panama: 100, nam: 10, 2: 1 }
 sumDigits('1panama2', { substringsToDigits: substringsToDigits, sumPlainDigits: false}) // 1111
 ```
