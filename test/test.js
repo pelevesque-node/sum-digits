@@ -5,7 +5,7 @@ const expect = require('chai').expect
 const sumDigits = require('../index')
 
 describe('#sumDigits()', () => {
-  describe('#should work with the sumPlainDigits flag set to false', () => {
+  describe('should work with the sumPlainDigits flag set to false', () => {
     it('should not count digits when the sumPlainDigits flag is false', () => {
       const expected = 0
       const str = '12345'
@@ -22,7 +22,7 @@ describe('#sumDigits()', () => {
     })
   })
 
-  describe('#should work without substringsToDigits assignments', () => {
+  describe('should work without substringsToDigits assignments', () => {
     it('should return 0 for an empty string', () => {
       const expected = 0
       const str = ''
@@ -45,7 +45,7 @@ describe('#sumDigits()', () => {
     })
   })
 
-  describe('#should work with substringsToDigits with single character keys', () => {
+  describe('should work with substringsToDigits with single character keys', () => {
     it('should work with substringsToDigits with assignments that are numbers', () => {
       const expected = 666
       const str = '1a2b3!'
@@ -87,7 +87,7 @@ describe('#sumDigits()', () => {
     })
   })
 
-  describe('#should work with substringsToDigits with multiple character keys', () => {
+  describe('should work with substringsToDigits with multiple character keys', () => {
     it('should work with substringsToDigits with assignments that are numbers', () => {
       const expected = 666
       const str = '1ab2cd3man'
@@ -145,7 +145,7 @@ describe('#sumDigits()', () => {
     })
   })
 
-  describe('#should ignore substringsToDigits when it is not an object', () => {
+  describe('should ignore substringsToDigits when it is not an object', () => {
     it('should ignore string', () => {
       const expected = 6
       const str = '123'
